@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <TableVue />
+    <TableVue />
   </div>
 </template>
 
