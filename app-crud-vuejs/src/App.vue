@@ -1,17 +1,18 @@
 <template>
   <div id="app">
-    <h1>Hello World</h1>
+    <TableVue />
   </div>
 </template>
 
 <script>
+import TableVue from "./components/Table.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-
-  }
-}
+    TableVue,
+  },
+};
 </script>
 
 <style>
