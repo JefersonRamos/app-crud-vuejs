@@ -1,8 +1,25 @@
 import Vue from 'vue'
 import App from './App.vue'
+import Cadastro from './Cadastro.vue'
 
-Vue.config.productionTip = false
+const NotFound = { template: '<p>Página não encontrada</p>'}
+const Home = App;
+const CadastroPage = Cadastro;
+
+const routes = {
+  '/': Home,
+  '/cadastro': CadastroPage
+}
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  el: '#app',
+  data: {
+    currentRoute: window.location.pathname
+  },
+  computed: {
+    ViewComponent () {
+      return routes[this.currentRoute] || NotFound
+    }
+  },
+  render (h) { return h(this.ViewComponent) }
+})
