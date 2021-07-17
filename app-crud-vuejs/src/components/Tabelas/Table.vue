@@ -17,7 +17,7 @@
 <script>
 //Import de colunas e Auth token
 import ColunasVue from "./Colunas.vue";
-import URL from "../api/auth";
+import URL from "../../api/auth";
 
 //Importando o Axios
 const axios = require("axios");

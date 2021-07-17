@@ -1,15 +1,21 @@
 <template>
-    <div>
-        <h1>Teste</h1>
-    </div>
+  <div>
+      <header>
+          <BtnHref href="/" name="Home"/>
+      </header>
+  </div>
 </template>
 
 <script>
-export default {
+import BtnHref from '../components/Buttons/ButtonHref.vue'
 
-}
+export default {
+  name: "Cadastro",
+  components: {
+      BtnHref,
+  },
+};
 </script>
 
 <style>
-    
 </style>
