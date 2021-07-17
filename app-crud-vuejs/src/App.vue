@@ -1,24 +1,15 @@
 <template>
-  <div id="app">
-    <!-- Tabela -->
-    <header>
-      <ButtonCadastro />
-    </header>
-
-    <TableVue />
+  <div>
+    <div>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
-import TableVue from "./components/Table.vue";
-import ButtonCadastro from "./components/ButtonCadastro.vue";
-
 export default {
-  name: "Home",
-  components: {
-    TableVue,
-    ButtonCadastro,
-  },
+  name: "App",
+  components: {},
 };
 </script>
 
@@ -30,5 +21,4 @@ export default {
 header {
   margin-bottom: 25px;
 }
-
 </style>
