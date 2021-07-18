@@ -1,5 +1,7 @@
 # app-crud-vuejs
 
+Trocar o 'let key = "AUTH TOKEN";' no api/auth.js pelo TOKEN CODE do CrudCrud
+
 ## Project setup
 ```
 npm install
