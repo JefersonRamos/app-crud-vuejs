@@ -12,7 +12,7 @@
         <p>R${{ objeto["price"] }}</p>
       </li>
       <li>
-        <p>{{ objeto["produto"] }}</p>
+        <p>{{ objeto["prod"] }}</p>
       </li>
       <li>
         <p>{{ objeto["client"] }}</p>
@@ -21,7 +21,7 @@
         <p>{{ objeto["status"] }}</p>
       </li>
       <li>
-        <button>Select</button>
+        <button v-on:click="atualiza(objeto['_id'])">Update</button>
         <button>Delete</button>
       </li>
     </ul>
@@ -29,11 +29,18 @@
 </template>
 
 <script>
+//Imports
+import router from '../../router'
+
 // Config do componente
 export default {
   name: "Column",
   props: ["data"],
-  methods: {},
+  methods: {
+    atualiza(id) {
+      router.push({path: '/update/'+id})
+    },
+  },
 };
 </script>
 

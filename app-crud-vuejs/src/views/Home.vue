@@ -1,8 +1,5 @@
 <template >
   <div>
-    <header>
-      <BtnHref href="cadastro" name="Cadastrar"/>
-    </header>
     <div>
       <Table />
     </div>

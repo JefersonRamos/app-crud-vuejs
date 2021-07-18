@@ -25,7 +25,7 @@ const axios = require("axios");
 export default {
   name: "Table",
 
-  //Dados dos objetos em JSON
+  //Dados dos objetos
   data() {
     return {
       objetos: [],
@@ -33,10 +33,11 @@ export default {
   },
 
   mounted() {
-    //Request pelo axios retornando todos os objetos
+    //Request pelo axios retornando todos os objetos para o data()
     axios.get(URL).then(
       (response) => {
-        this.objetos = response;
+        this.objetos = response.data;
+        console.log(response.data)
       },
       (error) => {
         console.log('Erro Interno' + ' - ' + error);
