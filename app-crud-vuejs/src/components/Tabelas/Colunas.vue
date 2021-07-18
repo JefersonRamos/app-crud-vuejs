@@ -21,8 +21,8 @@
         <p>{{ objeto["status"] }}</p>
       </li>
       <li>
-        <button v-on:click="atualiza(objeto['_id'])">Update</button>
-        <button>Delete</button>
+        <button v-on:click="att(objeto['_id'])">Update</button>
+        <button v-on:click="del(objeto['_id'])">Delete</button>
       </li>
     </ul>
   </div>
@@ -31,15 +31,30 @@
 <script>
 //Imports
 import router from '../../router'
+import axios from 'axios'
+import URL from '../../api/auth'
 
 // Config do componente
 export default {
   name: "Column",
   props: ["data"],
   methods: {
-    atualiza(id) {
+    //Metodo q chama a tela de atualizacao passando um id como param pela rota
+    att(id) {
       router.push({path: '/update/'+id})
     },
+
+    //Metodo q deleta o objeto na api pelo id
+    del(id){
+      axios.delete(URL+"/"+id)
+      .then(function(response){
+        alert('Deletado com sucesso!!!')
+        router.go()
+      })
+      .catch(function(error){
+        console.log(error);
+      })
+    }
   },
 };
 </script>

@@ -1,7 +1,11 @@
 <template>
   <div>
+    <header>
+      <BtnHref name="Home" href="" />
+    </header>
+
     <section>
-      <Form type="put" msg="Update" :data="id" />
+      <Form type="put" msg="Update" btnMsg="Atualizar" :data="id" />
     </section>
   </div>
 </template>

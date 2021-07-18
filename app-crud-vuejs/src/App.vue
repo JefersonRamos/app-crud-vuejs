@@ -1,10 +1,5 @@
 <template>
   <div>
-
-    <header>
-      <BtnHref name="Cadastrar" />
-    </header>
-
     <div>
       <router-view></router-view>
     </div>
@@ -12,12 +7,9 @@
 </template>
 
 <script>
-import BtnHref from './components/Buttons/ButtonHref.vue'
-
 export default {
   name: "App",
   components: {
-    BtnHref
   },
 };
 </script>

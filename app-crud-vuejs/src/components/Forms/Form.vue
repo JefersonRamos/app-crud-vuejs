@@ -2,7 +2,7 @@
   <div>
     <form>
       <div>
-        <h1>{{msg}}</h1>
+        <h1>{{ msg }}</h1>
         <ul>
           <li>
             <input
@@ -44,7 +44,7 @@
             <span>Active/Inactive</span>
             <input type="checkbox" name="checkbox" id="checkbox" />
           </li>
-          <li><input type="button" v-on:click="send()" value="Cadastrar" /></li>
+          <li><input type="button" v-on:click="send()" :value="btnMsg" /></li>
         </ul>
       </div>
     </form>
@@ -56,18 +56,51 @@
 import axios from "axios";
 import URL from "../../api/auth";
 import $ from "jquery";
-import Router from "../../router";
+import router from "../../router";
 
 //Exportando
 export default {
   name: "Form",
-  props: ["data", "type", "msg"],
+  props: ["data", "type", "msg", "btnMsg"],
 
-  created(){
-    console.log(this.data)
+  //OnCreate
+  created() {
+    console.log(this.data);
+    if (this.type == "put") {
+      if (this.data) {
+        var objeto = [];
+        axios
+          .get(URL + "/" + this.data)
+          .then(function (response) {
+            console.table(response.data);
+            $("#quant").val(response.data["quant"]);
+            $("#price").val(response.data["price"]);
+            $("#prod").val(response.data["prod"]);
+            $("#client").val(response.data["client"]);
+
+            if (response.data["status"] == true) {
+              $("#checkbox").attr("checked", "checked");
+            } else if (response.data["status" == false]) {
+              $("#checkbox").removeAttr("checked", "checked");
+            }
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      } else {
+        this.notFound();
+      }
+    } else {
+    }
   },
 
   methods: {
+    //Metodo que retorna um alert not found
+    notFound() {
+      alert("Data not found");
+      router.push({ path: "/" });
+    },
+
     //Metodo q faz as request
     send() {
       //Pegando os valores dos inputs
@@ -89,7 +122,7 @@ export default {
         alert("Algo não foi preenchido");
       } else {
         //Criando o data para ser enviado ou atualizado
-        var data = {
+        var objeto = {
           quant: quant,
           price: price,
           prod: prod,
@@ -100,21 +133,28 @@ export default {
         //Verificando o tipo do component se for post ou put
         if (this.type == "post") {
           axios
-            .post(URL, data)
+            .post(URL, objeto)
             .then(function (response) {
               alert("Cadastrado com sucesso!!!");
-              Router.push({ path: "/" });
+              router.push({ path: "/" });
             })
             .catch(function (error) {
               console.log(error);
             });
         } else if (this.type === "put" || this.data !== "") {
-          if(this.data){
+          if (this.data) {
             //Segue o request e adapta os inputs para fazer as alterações na api
-          
-          }else{
+            axios.put(URL+"/"+this.data, objeto)
+            .then(function(response){
+              console.table(response.data)
+              alert('Atualizado com sucesso!!!')
+              router.push({path: "/"})
+            }).catch(function(error){
+              console.log(error);
+            })
+          } else {
             //Retorna erro data not found
-            alert('Data not found')
+            this.notFound();
           }
         }
       }
