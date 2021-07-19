@@ -24,6 +24,20 @@ const routes = [
     props: true,
 
     component: () => import('../views/Update.vue')
+  },
+  {
+    //ROTA - LOGIN
+    path: '/login',
+    name: 'Login',
+    
+    component: () => import('../views/Login.vue')
+  },
+  {
+    //ROTA - REGISTER
+    path: '/register',
+    name: 'Register',
+
+    component: () => import('../views/Register.vue')
   }
 ]
 

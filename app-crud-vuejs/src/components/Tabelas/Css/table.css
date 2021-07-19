@@ -1,0 +1,23 @@
+.firstColumn {
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+}
+
+.firstColumn > li {
+  padding: 20px;
+  list-style: none;
+  flex: 1;
+  background-color: teal;
+  color: white;
+  text-align: center;
+  transition: all 0.4s;
+}
+
+.firstColumn > li:hover {
+  background-color: black;
+}
+
+.firstColumn > li:last-child:hover {
+  background-color: teal;
+}

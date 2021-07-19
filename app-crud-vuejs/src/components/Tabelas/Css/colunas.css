@@ -1,0 +1,35 @@
+.lastColumn {
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  .lastColumn > li {
+    list-style: none;
+    text-align: start;
+    text-align: center;
+    flex: 1;
+    border: 1px solid #cecece;
+  }
+  
+  .lastColumn > li > p {
+    align-self: center;
+  }
+  
+  .lastColumn > li:last-child {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .lastColumn > li:last-child > button {
+    background-color: teal;
+    color: white;
+    border: none;
+    margin: 4px;
+    padding: 5px;
+    transition: all 0.4s;
+  }
+  
+  .lastColumn > li:last-child > button:hover {
+    background-color: black;
+  }

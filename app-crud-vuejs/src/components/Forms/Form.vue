@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form>
+    <form class="formCadastro">
       <div>
         <h1>{{ msg }}</h1>
         <ul>
@@ -54,7 +54,7 @@
 <script>
 //Imports
 import axios from "axios";
-import URL from "../../api/auth";
+import URL from "../../api/crudcrud";
 import $ from "jquery";
 import router from "../../router";
 
@@ -163,82 +163,6 @@ export default {
 };
 </script>
 
-<style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap");
-
-form {
-  box-shadow: 0px 8px 20px 0px rgb(0, 0, 0, 0.4);
-  display: flex;
-  border-radius: 4px;
-  padding: 0px;
-}
-
-h1 {
-  font-family: "Hind", sans-serif;
-  margin-top: 45px;
-  color: #424242;
-  font-size: 24px;
-  text-align: center;
-}
-
-ul {
-  flex: 1;
-  justify-content: center;
-  padding-left: 70px;
-  padding-right: 70px;
-  margin-bottom: 45px;
-}
-
-ul > li {
-  list-style: none;
-  margin: 0px;
-}
-
-.editText {
-  border: none;
-  padding: 10px;
-  margin: 2px;
-  border-bottom: 1px solid #cecece;
-  transition: all 0.4s;
-}
-
-.editText:focus {
-  outline: unset;
-  border-bottom-color: black;
-}
-
-ul > li:last-child > input {
-  background: teal;
-  color: white;
-  padding: 10px;
-  border: none;
-  padding-left: 40px;
-  padding-right: 40px;
-  transition: all 0.4s;
-}
-
-ul > li:last-child > input:hover {
-  background: black;
-}
-
-ul > li:nth-child(5) {
-  text-align: center;
-  font-size: 15px;
-  margin: 10px;
-  display: flex;
-}
-
-ul > li:nth-child(5) > span {
-  flex: 1;
-  justify-content: start;
-  text-align: start;
-}
-
-ul > li:nth-child(5) > input {
-}
-
-ul > li:last-child {
-  display: flex;
-  justify-content: center;
-}
+<style>
+  @import './Css/Form.css';
 </style>

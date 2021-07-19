@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap");
+
+.formLogin {
+  text-align: center;
+  padding: 20px;
+  padding-top: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+  box-shadow: 0px 8px 20px 0px rgb(0, 0, 0, 0.4);
+  border-left: 5px solid teal;
+  border-right: 5px solid transparent;
+  font-family: "Hind", sans-serif;
+}
+
+.formLogin > h1 {
+  font-family: "Hind", sans-serif;
+  color: #424242;
+  font-size: 24px;
+  text-align: center;
+}
+
+.formLogin > ul {
+  padding: 0px;
+}
+
+.formLogin > ul > li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.formLogin > ul > li > input {
+  border: none;
+  min-width: 200px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid teal;
+  padding: 20px;
+  padding-bottom: 10px;
+  padding-left: 1px;
+  outline: none;
+  transition: all 0.4s;
+}
+
+.formLogin > ul > li > input:focus {
+  border-bottom-color: black;
+}
+
+.formLogin > ul > li > #login {
+  border: none;
+  background: teal;
+  margin-bottom: 10px;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  transition: all 0.4s;
+}
+
+form > ul > li > #login:hover {
+  background: black;
+}
+
+form > ul > li > a {
+  color: black;
+  text-decoration: none;
+  user-select: none;
+  cursor: pointer;
+}

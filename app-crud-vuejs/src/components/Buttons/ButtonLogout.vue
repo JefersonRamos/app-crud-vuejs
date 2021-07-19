@@ -4,14 +4,18 @@
   </div>
 </template>
 <script>
+//Imports
 import router from "../../router";
 
 export default {
   name: "button",
-  props: ["href", "name"],
+  props: ["name"],
   methods: {
     click() {
-      router.push({ path: "/" + this.href });
+      //Deslogando
+      localStorage.setItem("idToken", "");
+      localStorage.setItem('email', "")
+      router.push({ path: "/login" });
     },
   },
 };

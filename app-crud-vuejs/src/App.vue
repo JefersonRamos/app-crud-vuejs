@@ -7,9 +7,19 @@
 </template>
 
 <script>
+import router from './router'
+
 export default {
   name: "App",
-  components: {
+  created() {
+    if (localStorage["idToken"] == null) {
+      router.push("/login");
+    } else if (localStorage["idToken"] !== "") {
+      router.push("/");
+    } else if (localStorage["idToken"] === "") {
+      router.push("/login");
+      localStorage["idToke"] == null;
+    }
   },
 };
 </script>
@@ -21,5 +31,9 @@ export default {
 
 header {
   margin-bottom: 25px;
+}
+
+body {
+  overflow-x: hidden;
 }
 </style>
